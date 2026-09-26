@@ -1,6 +1,6 @@
 # EfficientAgent
 
-Code for **EfficientAgent: What Makes Host KV Offloading Work for Concurrent Agents?**
+Code for **EfficientAgent: What Makes KV Cache Offloading Work for Concurrent Agents?**
 (ICLR 2027 submission).
 
 EfficientAgent sizes and admits host-memory KV state for serving many concurrent language-model agents with
