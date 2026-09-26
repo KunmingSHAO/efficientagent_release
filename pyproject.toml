@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "efficientagent"
+version = "0.1.0"
+description = "Sizing and admitting host KV state by the reuse working set of concurrent agents (vLLM + LMCache)"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+serve = ["vllm==0.13.0", "lmcache==0.3.12"]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["efficientagent*"]
+
+[tool.setuptools.package-data]
+"efficientagent.replay" = ["lmcache_observer/*.py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gpu: needs CUDA GPUs, vLLM 0.13.0 and LMCache 0.3.12 (run with --run-gpu)"]
